@@ -7,17 +7,70 @@
   <title>PH Tube</title>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    .active {
+      background: #FF1F3D;
+      color: white
+    }
+  </style>
 </head>
 
 <body>
   <header>
-    <nav class="flex justify-between w-11/12 mx-auto border-b-1 border-y-cyan-100 py-4">
+    <nav class="flex justify-between w-11/12 mx-auto border-b-1 border-y-[#17171720] py-5">
       <div class="logo"><img src="./resurces/Logo.png" alt=""></div>
-      <div class="sort"><button class="btn">Short By View</button></div>
-      <div class="blog"><button class="btn">Blog</button></div>
+      <!-- search view -->
+      <div class="sort w-12/5 mx-auto  flex justify-center"><label class="input">
+          <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </g>
+          </svg>
+          <input type="search" required placeholder="Search" />
+        </label></div>
+      <!-- blog button here -->
+      <div class="blog"><button class="btn bg-[#FF1F3D] text-white">Blog</button></div>
 
     </nav>
+
+    <nav>
+      <div id="container" class="flex justify-center gap-8 py-5">
+        <div class="">
+          <button id="all-btn" onclick="loadVideo()" class="btn btn-sm ">All</button>
+        </div>
+      </div>
+    </nav>
   </header>
+  <main>
+    <section id="video-container" class="w-11/12 grid grid-cols-4 gap-4 mx-auto  items-center">
+      <div class="col-span-full  flex flex-col justify-center items-center   mt-40">
+        <img src="./resurces/Icon.png" alt="">
+        <h1 class="font-bold text-3xl text-center">Oops!! Sorry,There are no <br> content here</h1>
+      </div>
+
+    </section>
+    <section>
+      <div class="modal-container ">
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="video_ditails" class="modal">
+
+          <div class="modal-box">
+            <div id="show-details">
+
+            </div>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </div>
+    </section>
+  </main>
+  <script src="./js file/index.js"></script>
 </body>
 
 </html>
